@@ -35,7 +35,7 @@ When you've completed all the labs, `git add`, `git commit`, and `git push origi
 
 
 
-Make sure the base repository is `mhanlon/Labs` and the base is `main`, like so (roughly):
+Make sure the base repository is `Teaching-Develop-in-Swift/Labs` and the base is `main`, like so (roughly):
 
 ![](images/pull-request-base.png)
 
