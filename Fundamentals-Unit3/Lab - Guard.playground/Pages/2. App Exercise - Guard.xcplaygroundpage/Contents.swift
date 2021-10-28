@@ -1,4 +1,7 @@
-import UIKit
+// A placeholder to be able to build on the commandline
+class UITextField {
+    var text: String?
+}
 /*:
 ## App Exercise - Guard
 

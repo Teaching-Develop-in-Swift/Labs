@@ -1,4 +1,9 @@
-import UIKit
+import Foundation
+// Placeholders to be able to build on the commandline
+class UIViewController {}
+class UILabel {
+    var text: String?
+}
 /*:
 ## App Exercise - Heart Rate Delegate
 
