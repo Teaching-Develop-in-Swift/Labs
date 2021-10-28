@@ -1,4 +1,4 @@
-# DevelopInSwiftFundamentals
+# Develop in Swift Labs
 A repository with the student materials from the Xcode 12 version of Develop with Swift Fundamentals
 
 This repo contains the Swift Playground labs from Apple's [Develop with Swift Fundamentals](https://apple.co/developinswiftfundamentals) curriculum.
