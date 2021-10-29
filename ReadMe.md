@@ -28,7 +28,11 @@ Read through the lessons and follow along wherever possible. At the end of each 
 ![](images/the-labs.png)
 
 
-When you've completed all the labs, `git add`, `git commit`, and `git push origin main` your code back up to Github. On the page for your fork of the repo `(https://github.com/<your_username>/Labs)` you'll push the button to create a new pull request:
+When you've completed all the labs, in Terminal, change directories into the Labs folder. If you are using the same Terminal window you cloned the repository in, you can likely type `cd Labs` to do so.
+Then type `git add .`, to add all your changed files, then `git commit -m "A little message about the files you changed"` to save the changes. The message can be anything; it's usually most helpfull to leave a comment about what the changes were for, or maybe any questions you might have had about the assignment or the code you wrote (or failed to write).
+Lastly, type `git push origin` and your code will be pushed back up to Github.
+
+On the page for your fork of the repo `(https://github.com/<your_username>/Labs)` you'll push the button to create a new pull request (you may need to refresh the page):
 
 ![](images/new-pull-request-button.png)
 
