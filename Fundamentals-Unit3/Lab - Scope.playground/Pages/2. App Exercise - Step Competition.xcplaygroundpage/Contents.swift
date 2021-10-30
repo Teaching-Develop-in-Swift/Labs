@@ -25,7 +25,7 @@ func getWinner(competitors: [User]) -> User? {
 
     for competitor in competitors {
         if let currentTopCompetitor = topCompetitor {
-            if competitor.stepsToday > topCompetitor.stepsToday {
+            if competitor.stepsToday > currentTopCompetitor.stepsToday {
                 topCompetitor = competitor
             }
         } else {
