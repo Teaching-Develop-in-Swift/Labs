@@ -10,13 +10,15 @@ print("How to use playgrounds to make writing Swift fun and simple")
 /*:
  Now print your own phrases to the console. Pick one of your favorite songs. Use your knowledge of the `print` function to display the song title and artist.
  */
-
+print("\"Who Do You Think You Are?\" by the Spice Girls" )
 
 /*:
  Use multiple `print` functions to write out some of the lyrics to the song.
  */
-
-
+print("The race is on to get out of the bottom")
+print("The top is high so your roots are forgotten")
+print("Giving is good as long as you're getting")
+print("What's driving you is ambition I'm betting")
 
 /*:
 
