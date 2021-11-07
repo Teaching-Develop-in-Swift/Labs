@@ -12,7 +12,20 @@
 - Average heart rate: The user's average heart rate over the last 24 hours
  */
 
+let userName = "Samuele"
+print("This is a constant because the name is always the same, it will never change.")
 
+var userAge = 24
+print("This is a variable because age will be incremented year by year.")
+
+var todaySteps = 1000
+print("This is a variable because it change during the day and should be reset at the end of the day.")
+
+var stepsGoal = 330
+print("I was not sure about this, because it can be a constant, but usually in applications you may have the possibility to change your goal, so I choice a var.")
+
+var todayAverageHeartRate = 70
+print("As the today steps: this is a variable because it change during the day and should be reset at the end of the day.")
 /*:
  Now go back and add a line after each constant or variable declaration. On those lines, print a statement explaining why you chose to declare the piece of information as a constant or variable.
  
