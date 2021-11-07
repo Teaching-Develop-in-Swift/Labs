@@ -8,6 +8,10 @@ let blankClosure: () -> Void = {}
 let fourClosure: () -> Int = {
     return 4
 }
+fourClosure()
+fourClosure()
+fourClosure()
+fourClosure()
 //:  Create a closure assigned to a constant `greeting` that accepts a `name` string argument with no return value. Within the body of the closure, print the argument. Call the closure four times using "Gary", "Jane", "Rick", and "Beth" as arguments.
 let greeting: (String) -> Void = { name in
     print(name)

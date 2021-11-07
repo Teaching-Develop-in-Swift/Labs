@@ -11,6 +11,12 @@
  For each of the metrics above, declare either a constant or a variable and assign it a value corresponding to a hypothetical post. Be sure to use proper naming conventions.
  */
 
+import Foundation
+var numberOfLikes = 10 /// The number of likes of a post can change, so it has to be a variable.
+var numberOfComments = 6 /// The number of comments of a post can change, so it has to be a variable.
+let yearCreated = 2021 /// The post creation date do not change, so year, month and day must be constants.
+let monthCreated = 11
+let dayCreated = 7
 
 /*:
 [Previous](@previous)  |  page 5 of 10  |  [Next: App Exercise - Fitness Tracker: Constant or Variable?](@next)
