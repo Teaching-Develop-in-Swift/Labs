@@ -13,8 +13,21 @@ class UITextField {
 
  Write a failable initializer that takes parameters for your start and end times, and then checks to see if they are greater than 10 seconds apart using a guard statement. If they are, your initializer should fail. Otherwise, the initializer should set the properties accordingly.
  */
+struct Workout {
+    let startTime: Double
+    let endTime: Double
+    
+    init?(startTime: Double, endTime: Double) {
+        guard (endTime - startTime) > 10.0 else { return nil}
+        self.startTime = startTime
+        self.endTime = endTime
+    }
+}
 
-
+let fail = Workout(startTime: 22.800, endTime: 17.900)
+print(fail)
+let success = Workout(startTime: 1.8, endTime: 22.9)
+print(success)
 /*:
  Imagine a screen where a user inputs a meal that they've eaten. If the user taps a "save" button without adding any food, you might want to prompt the user that they haven't actually added anything.
 
@@ -31,10 +44,33 @@ let caloriesTextField = UITextField()
 foodTextField.text = "Banana"
 caloriesTextField.text = "23"
 
+func logFood() -> Food? {
+    guard let foodName = foodTextField.text, !foodName.isEmpty, let caloriesText = caloriesTextField.text, let calories = Int(caloriesText) else { return nil }
+    return Food(name: foodName, calories: calories)
+}
 
+let successLogFood = logFood()
+print("successLogFood \(successLogFood)")
+
+
+foodTextField.text = nil
+caloriesTextField.text = nil
+
+let firstCaseFailLogFood = logFood()
+print("firstCaseFailLogFood \(firstCaseFailLogFood)")
+
+
+caloriesTextField.text = "23"
+let secondCaseFailLogFood = logFood()
+print("secondCaseFailLogFood \(secondCaseFailLogFood)")
+
+foodTextField.text = "Banana"
+caloriesTextField.text = nil
+let thirdCaseFailLogFood = logFood()
+print("thirdCaseFailLogFood \(thirdCaseFailLogFood)")
 //:  Call the function you made above and capture the return value. Unwrap the `Food` object with standard optional binding and print a statement about the food using each of its properties. Go back and change the text in `caloriesTextField` to a string that cannot be converted into a number. What happens in that case?
-
-
+caloriesTextField.text = "test"
+print("In this case the Int initializer fail and return nil")
 /*:
  _Copyright © 2021 Apple Inc._
 
