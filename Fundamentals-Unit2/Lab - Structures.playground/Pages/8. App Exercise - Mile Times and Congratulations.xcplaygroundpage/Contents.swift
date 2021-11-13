@@ -12,8 +12,15 @@ struct RunningWorkout {
     var time: Double
     var elevation: Double
     
+    var averageMileTime: Double {
+        time / distance * 1600
+    }
+    
 }
 
+var run = RunningWorkout(distance: 1000, time: 1000, elevation: 25)
+
+print(run.averageMileTime)
 
 /*:
  In other app exercises, you've provided encouraging messages to the user based on how many steps they've completed. A great place to check whether or not you should display something to the user is in a property observer.
@@ -21,13 +28,26 @@ struct RunningWorkout {
  In the `Steps` struct below, add a `willSet` to the `steps` property that will check if the new value is equal to `goal`, and if it is, prints a congratulatory message. Create an instance of `Steps` where `steps` is 9999 and `goal` is 10000, then call `takeStep()` and see if your message is printed to the console.
  */
 struct Steps {
-    var steps: Int
+    
+    var steps: Int {
+        willSet {
+            if newValue == goal {
+                print("Congratulations!")
+            }
+        }
+    }
+    
     var goal: Int
     
     mutating func takeStep() {
         steps += 1
     }
 }
+
+
+var steps = Steps(steps: 9999, goal: 10000)
+
+steps.takeStep()
 
 
 /*:
