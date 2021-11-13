@@ -62,9 +62,9 @@ for (_, value) in randomDictionary {
     else if let currentItem = value as? Double {
         total2 += currentItem
     }
-    else if let currentItem = value as? String, let currentItem = Double(currentItem) {
-        total2 += currentItem
-    }
+    //else if let currentItem = value as? String, let currentItem = Double(currentItem) {
+    //    total2 += currentItem
+    //}
 }
 
 print(total2)
