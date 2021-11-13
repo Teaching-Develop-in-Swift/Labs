@@ -22,7 +22,7 @@ for item in random {
 }
 
 //:  Create a [String : Any] dictionary, where the values are a mixture of doubles, integers, strings, and booleans. Print the key/value pairs within the collection
-let randomDictionary: [String: Any] = ["myBool": true, "MyOtherBool": false, "myString": "Simon", "myInt": 12, "myDouble": 1.1]
+let randomDictionary: [String: Any] = ["myBool": true, "MyOtherBool": false, "myString": "35", "myInt": 12, "myDouble": 1.1]
 print(randomDictionary)
 
 //:  Create a variable `total` of type `Double` set to 0. Then loop through the dictionary, and add the value of each integer and double to your variable's value. For each string value, add 1 to the total. For each boolean, add 2 to the total if the boolean is `true`, or subtract 3 if it's `false`. Print the value of `total`.
@@ -62,8 +62,7 @@ for (_, value) in randomDictionary {
     else if let currentItem = value as? Double {
         total2 += currentItem
     }
-    else if let currentItem = value as? String,
-        let currentItem = Double(currentItem) {
+    else if let currentItem = value as? String, let currentItem = Double(currentItem) {
         total2 += currentItem
     }
 }
