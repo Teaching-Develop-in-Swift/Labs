@@ -11,14 +11,32 @@ struct Workout {
     var averageHR: Int
 }
 
-
+extension Workout: CustomStringConvertible {
+    var description: String {
+        return "distance: \(distance), time: \(time), averageHR: \(averageHR)"
+    }
+}
 
 //:  Now create another extension for `Workout` and add a property `speed` of type `Double`. It should be a computed property that returns the average meters per second traveled during the workout.
-
+extension Workout {
+    var speed: Double {
+        return distance/time
+    }
+}
 
 //:  Now add a method `harderWorkout` that takes no parameters and returns another `Workout` instance. This method should double the `distance` and `time` properties, and add 40 to `averageHR`. Create an instance of `Workout` and print it to the console. Then call `harderWorkout` and print the new `Workout` instance to the console.
+extension Workout {
+    mutating func harderWorkout() {
+        distance *= 2
+        time *= 2
+        averageHR += 40
+    }
+}
 
-
+var workout = Workout(distance: 10, time: 2, averageHR: 40)
+print("workout: \(workout)")
+workout.harderWorkout()
+print("workout: \(workout)")
 /*:
  _Copyright © 2021 Apple Inc._
 
