@@ -19,12 +19,24 @@ extension Data {
 //----------------begin-student------------
 var urlComponents = URLComponents(string: "https://itunes.apple.com/search")!
 urlComponents.queryItems = [
-    "term": "Apple",
+    "term": "Apple",  // --- 1
     "media": "ebook",
     "attribute": "authorTerm",
     "lang": "en_us",
     "limit": "10"
 ].map { URLQueryItem(name: $0.key, value: $0.value) }
+
+// Code in the Student Guide - Create Your Model
+/*
+Task {
+    let (data, response) = try await URLSession.shared.data(from: urlComponents.url!)
+
+    if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+        data.prettyPrintedJSONString()
+    }
+}
+*/
+
 
 URLSession.shared.dataTask(with: urlComponents.url!) { (data, response, error) in
     if let data = data {
@@ -32,6 +44,8 @@ URLSession.shared.dataTask(with: urlComponents.url!) { (data, response, error) i
         PlaygroundPage.current.finishExecution()
     }
 }.resume()
+
+
 //----------------end-student--------------
 //----------------begin-teacher------------
 struct StoreItem: Codable {
@@ -72,6 +86,57 @@ struct StoreItem: Codable {
 struct SearchResponse: Codable {
     let results: [StoreItem]
 }
+
+// Code in the Student Guide - Create a function to fetch items
+/*
+ enum StoreItemError: Error, LocalizedError {
+     case itemsNotFound
+ }
+
+ func fetchItems(matching query: [String: String]) async throws -> [StoreItem] {
+     var urlComponents = URLComponents(string: "https://itunes.apple.com/search")!
+     urlComponents.queryItems = query.map { URLQueryItem(name: $0.key, value: $0.value) }
+     
+     let (data, response) = try await URLSession.shared.data(from: urlComponents.url!)
+     
+     guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+         throw StoreItemError.itemsNotFound
+     }
+     
+     let decoder = JSONDecoder()
+     let searchResponse = try decoder.decode(SearchResponse.self, from: data)
+
+     return searchResponse.results
+ }
+
+ let query = [
+     "term": "Apple",
+     "media": "ebook",
+     "attribute": "authorTerm",
+     "lang": "en_us",
+     "limit": "10"
+ ]
+
+ Task {
+     do {
+         let storeItems = try await fetchItems(matching: query)
+         storeItems.forEach { item in
+             print("""
+             Name: \(item.name)
+             Artist: \(item.artist)
+             Kind: \(item.kind)
+             Description: \(item.description)
+             Artwork URL: \(item.artworkURL)
+
+
+             """)
+         }
+     } catch {
+         print(error)
+     }
+ }
+ 
+*/
 
 func fetchItems(matching query: [String: String], completion: @escaping (Result<[StoreItem], Error>) -> Void) {
     var urlComponents = URLComponents(string: "https://itunes.apple.com/search")!
