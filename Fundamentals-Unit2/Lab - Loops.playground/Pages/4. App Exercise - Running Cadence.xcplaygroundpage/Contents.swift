@@ -1,6 +1,6 @@
 import Foundation
 /*:
-## App Exercise - While Loops
+ ## App Exercise - While Loops
  
  >These exercises reinforce Swift concepts in the context of a fitness tracking app.
  
@@ -10,12 +10,20 @@ import Foundation
  */
 let cadence: Double = 180
 var testSteps = 0
-
+while testSteps < 10 {
+    print("Take a step")
+    testSteps += 1
+    Thread.sleep(forTimeInterval: 60/cadence)
+}
 
 //:  Recreate the above cadence example using a repeat-while loop.
 testSteps = 0 
-
+repeat {
+    print("Take a step")
+    testSteps += 1
+    Thread.sleep(forTimeInterval: 60/cadence)
+} while testSteps < 10
 
 /*:
-[Previous](@previous)  |  page 4 of 6  |  [Next: Exercise - Control Transfer Statements](@next)
+ [Previous](@previous)  |  page 4 of 6  |  [Next: Exercise - Control Transfer Statements](@next)
  */
