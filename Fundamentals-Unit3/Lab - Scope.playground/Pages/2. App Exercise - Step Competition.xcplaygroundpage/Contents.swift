@@ -8,13 +8,26 @@
 struct User {
     var name: String
     var stepsToday: Int
+    
+    init(name: String, stepsToday: Int) {
+        self.name = name
+        self.stepsToday = stepsToday
+    }
+
+    init?(name: String?, stepsToday: Int?) {
+        guard let name = name, let stepsToday = stepsToday else {return nil}
+
+        self.name = name
+        self.stepsToday = stepsToday
+    }
+    
 }
 
 let stepMaster = User(name: "StepMaster", stepsToday: 8394)
 let activeSitter = User(name: "ActiveSitter", stepsToday: 9132)
 let monsterWalker = User(name: "MonsterWalker", stepsToday: 7193)
 
-let competitors = [stepMaster, activeSitter, monsterWalker]
+var competitors = [stepMaster, activeSitter, monsterWalker]
 /*:
  The function below takes an array of `User` objects and returns the `User` object that has taken the most steps. The body of the function first declares a variable that is an optional `User`, then loops through all of the users in the array. Inside each iteration of the loop, it will check if `topCompetitor` has a value or not by unwrapping it. If `topCompetitor` doesn't have a value, then the current user in the iteration is assumed to have the highest score and is assigned to `topCompetitor`. If `topCompetitor` has a value, there is code to check whether the current user in the iteration has taken more steps than the user that is assigned to `topCompetitor`.
 
@@ -24,8 +37,8 @@ func getWinner(competitors: [User]) -> User? {
     var topCompetitor: User?
 
     for competitor in competitors {
-        if let topCompetitor = topCompetitor {
-            if competitor.stepsToday > topCompetitor.stepsToday {
+        if let theWinner = topCompetitor {
+            if competitor.stepsToday > theWinner.stepsToday {
                 topCompetitor = competitor
             }
         } else {
@@ -35,12 +48,18 @@ func getWinner(competitors: [User]) -> User? {
     return topCompetitor
 }
 
-
+let winner = getWinner(competitors: competitors)
+print(winner?.name ?? "")
 //:  Write a memberwise initializer inside the `User` struct above that uses variable shadowing for naming the parameters of the initializer.
-
-
+// Implement on the line 12 - 15
+let thiti = User(name: "Thiti", stepsToday: 10000)
+competitors.append(thiti)
+let newWinner1 = getWinner(competitors: competitors)
+print(newWinner1?.name ?? "")
 //:  Now write a failable initializer inside the `User` struct above that takes parameters `name` and `stepsToday` as an optional `String` and `Int`, respectively. The initializer should return `nil` if either of the parameters are `nil`. Use variable shadowing when unwrapping the two parameters.
-
+// Implement on the line 17 - 22
+let unknowUser = User(name: nil, stepsToday: 20000)
+let looknam = User(name: "Looknam", stepsToday: nil)
 
 /*:
  _Copyright © 2021 Apple Inc._
