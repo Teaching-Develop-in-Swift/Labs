@@ -12,6 +12,21 @@
 - Average heart rate: The user's average heart rate over the last 24 hours
  */
 
+// declared with let because the user's name should not change once it has been set
+let name = "Apiphoom Chuenchompoo"
+
+// declared with var because its value may change as the user gets older.
+var age = 35
+
+//declared with var because the number of steps taken by the user will change throughout the day.
+var numberOfStepsTakenToday = 8000
+
+//declared with let because the user's goal for the number of steps to take each day should not change
+let goalNumberOfSteps = 10000
+
+//declared with var because the user's average heart rate may change over time.
+var averageHeartRate = 72
+
 
 /*:
  Now go back and add a line after each constant or variable declaration. On those lines, print a statement explaining why you chose to declare the piece of information as a constant or variable.
