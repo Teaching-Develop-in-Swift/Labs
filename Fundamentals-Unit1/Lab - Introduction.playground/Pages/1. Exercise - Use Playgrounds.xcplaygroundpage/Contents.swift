@@ -10,12 +10,23 @@ print("How to use playgrounds to make writing Swift fun and simple")
 /*:
  Now print your own phrases to the console. Pick one of your favorite songs. Use your knowledge of the `print` function to display the song title and artist.
  */
-
+print("Song: Stairway to Heaven")
+print("Artist: Led Zeppelin")
 
 /*:
  Use multiple `print` functions to write out some of the lyrics to the song.
  */
+print("""
 
+There's a lady who's sure all that glitters is gold
+And she's buying a stairway to Heaven
+When she gets there she knows, if the stores are all closed
+With a word she can get what she came for
+Ooh, ooh, and she's buying a stairway to Heaven
+There's a sign on the wall, but she wants to be sure
+'Cause you know sometimes words have two meanings
+...
+""")
 
 
 /*:
